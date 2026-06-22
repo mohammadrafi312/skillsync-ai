@@ -15,7 +15,12 @@ export default function Assessment() {
     },
     {
       question: "What type of work do you prefer?",
-      options: ["Building Apps", "Creative Design", "Analyzing Data", "Selling Products"],
+      options: [
+        "Building Apps",
+        "Creative Design",
+        "Analyzing Data",
+        "Selling Products",
+      ],
     },
     {
       question: "Which tool would you like to master?",
@@ -24,6 +29,46 @@ export default function Assessment() {
     {
       question: "What excites you most?",
       options: ["Software", "Design", "Insights", "Growth"],
+    },
+    {
+      question: "How do you prefer to solve problems?",
+      options: ["Programming", "Creativity", "Data", "Communication"],
+    },
+    {
+      question: "Which environment do you enjoy?",
+      options: [
+        "Tech Teams",
+        "Creative Studios",
+        "Research Teams",
+        "Business Teams",
+      ],
+    },
+    {
+      question: "What motivates you most?",
+      options: [
+        "Building Products",
+        "Creating Designs",
+        "Finding Insights",
+        "Growing Brands",
+      ],
+    },
+    {
+      question: "Which skill sounds most interesting?",
+      options: [
+        "Web Development",
+        "UI Design",
+        "Machine Learning",
+        "Digital Marketing",
+      ],
+    },
+    {
+      question: "Where do you see yourself in 5 years?",
+      options: [
+        "Software Engineer",
+        "UI/UX Designer",
+        "Data Scientist",
+        "Marketing Manager",
+      ],
     },
   ];
 
@@ -39,42 +84,73 @@ export default function Assessment() {
   const handleAnswer = (option) => {
     const updated = { ...scores };
 
+    // Software
     if (
-      option === "Coding" ||
-      option === "Programming" ||
-      option === "Building Apps" ||
-      option === "VS Code" ||
-      option === "Software"
+      [
+        "Coding",
+        "Programming",
+        "Building Apps",
+        "VS Code",
+        "Software",
+        "Tech Teams",
+        "Building Products",
+        "Web Development",
+        "Software Engineer",
+      ].includes(option)
     ) {
       updated.software += 1;
     }
 
+    // Data
     if (
-      option === "Data Analysis" ||
-      option === "Statistics" ||
-      option === "Analyzing Data" ||
-      option === "Power BI" ||
-      option === "Insights"
+      [
+        "Data Analysis",
+        "Statistics",
+        "Analyzing Data",
+        "Power BI",
+        "Insights",
+        "Data",
+        "Research Teams",
+        "Finding Insights",
+        "Machine Learning",
+        "Data Scientist",
+      ].includes(option)
     ) {
       updated.data += 1;
     }
 
+    // Design
     if (
-      option === "Designing" ||
-      option === "UI/UX" ||
-      option === "Creative Design" ||
-      option === "Figma" ||
-      option === "Design"
+      [
+        "Designing",
+        "UI/UX",
+        "Creative Design",
+        "Figma",
+        "Design",
+        "Creativity",
+        "Creative Studios",
+        "Creating Designs",
+        "UI Design",
+        "UI/UX Designer",
+      ].includes(option)
     ) {
       updated.design += 1;
     }
 
+    // Marketing
     if (
-      option === "Marketing" ||
-      option === "Business" ||
-      option === "Selling Products" ||
-      option === "Google Ads" ||
-      option === "Growth"
+      [
+        "Marketing",
+        "Business",
+        "Selling Products",
+        "Google Ads",
+        "Growth",
+        "Communication",
+        "Business Teams",
+        "Growing Brands",
+        "Digital Marketing",
+        "Marketing Manager",
+      ].includes(option)
     ) {
       updated.marketing += 1;
     }
@@ -95,7 +171,6 @@ export default function Assessment() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-white flex flex-col justify-center items-center px-6">
-
       <h1 className="text-5xl font-bold mb-6">
         Career Assessment
       </h1>
@@ -105,7 +180,6 @@ export default function Assessment() {
       </p>
 
       <div className="w-full max-w-2xl">
-
         <div className="bg-slate-800 h-3 rounded-full mb-8">
           <div
             className="bg-cyan-400 h-3 rounded-full transition-all duration-500"
@@ -120,21 +194,17 @@ export default function Assessment() {
         </h2>
 
         <div className="grid gap-4">
-
           {questions[current].options.map((option) => (
             <button
               key={option}
               onClick={() => handleAnswer(option)}
-              className="p-5 bg-slate-900 rounded-2xl border border-slate-700 hover:border-cyan-400 hover:scale-105 transition"
+              className="p-5 bg-slate-900 rounded-2xl border border-slate-700 hover:border-cyan-400 hover:scale-105 transition-all duration-300"
             >
               {option}
             </button>
           ))}
-
         </div>
-
       </div>
-
     </div>
   );
 }

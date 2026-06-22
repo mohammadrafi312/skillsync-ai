@@ -11,18 +11,30 @@ export default function Results() {
       design: 0,
       marketing: 0,
     };
-
-  let career = "Data Analyst";
-  let match = "94%";
+let career = "Data Analyst";
+let match = "94%";
+let readiness = "78%";
 
   let skills = ["SQL", "Power BI", "Python", "Excel"];
 
   let courses = [
-    "SQL for Beginners",
-    "Power BI Dashboard Masterclass",
-    "Python for Data Analysis",
-    "Advanced Excel",
-  ];
+  {
+    title: "SQL for Beginners",
+    link: "https://www.hackerrank.com/domains/sql",
+  },
+  {
+    title: "Power BI Dashboard Masterclass",
+    link: "https://learn.microsoft.com/en-us/training/powerplatform/power-bi/",
+  },
+  {
+    title: "Python for Data Analysis",
+    link: "https://www.freecodecamp.org/learn/",
+  },
+  {
+    title: "Advanced Excel",
+    link: "https://www.coursera.org/learn/excel-skills-for-business",
+  },
+];
 
   let roadmap = [
     "Learn Excel Fundamentals",
@@ -38,16 +50,29 @@ export default function Results() {
 
   if (maxCareer === "software") {
     career = "Software Engineer";
-    match = "96%";
+match = "96%";
+readiness = "85%";
 
     skills = ["HTML & CSS", "JavaScript", "React", "Node.js"];
 
-    courses = [
-      "HTML & CSS Bootcamp",
-      "JavaScript Complete Guide",
-      "React Development",
-      "Node.js Fundamentals",
-    ];
+   courses = [
+  {
+    title: "HTML & CSS Bootcamp",
+    link: "https://www.freecodecamp.org/learn",
+  },
+  {
+    title: "JavaScript Complete Guide",
+    link: "https://javascript.info",
+  },
+  {
+    title: "React Development",
+    link: "https://react.dev/learn",
+  },
+  {
+    title: "Node.js Fundamentals",
+    link: "https://nodejs.dev/en/learn",
+  },
+];
 
     roadmap = [
       "Learn HTML & CSS",
@@ -60,7 +85,8 @@ export default function Results() {
 
   if (maxCareer === "design") {
     career = "UI/UX Designer";
-    match = "92%";
+match = "92%";
+readiness = "80%";
 
     skills = [
       "Figma",
@@ -69,12 +95,24 @@ export default function Results() {
       "Prototyping",
     ];
 
-    courses = [
-      "Figma Masterclass",
-      "UI Design Essentials",
-      "UX Research Fundamentals",
-      "Prototyping Workshop",
-    ];
+   courses = [
+  {
+    title: "Figma Masterclass",
+    link: "https://help.figma.com",
+  },
+  {
+    title: "UI Design Essentials",
+    link: "https://www.coursera.org",
+  },
+  {
+    title: "UX Research Fundamentals",
+    link: "https://www.interaction-design.org",
+  },
+  {
+    title: "Prototyping Workshop",
+    link: "https://www.figma.com/resources",
+  },
+];
 
     roadmap = [
       "Learn Design Principles",
@@ -85,9 +123,10 @@ export default function Results() {
     ];
   }
 
-  if (maxCareer === "marketing") {
-    career = "Digital Marketer";
-    match = "91%";
+if (maxCareer === "marketing") {
+  career = "Digital Marketer";
+  match = "91%";
+  readiness = "76%";
 
     skills = [
       "SEO",
@@ -97,11 +136,23 @@ export default function Results() {
     ];
 
     courses = [
-      "SEO Fundamentals",
-      "Google Ads Masterclass",
-      "Digital Marketing Strategy",
-      "Content Marketing",
-    ];
+  {
+    title: "SEO Fundamentals",
+    link: "https://learningseo.io",
+  },
+  {
+    title: "Google Ads Masterclass",
+    link: "https://skillshop.withgoogle.com",
+  },
+  {
+    title: "Digital Marketing Strategy",
+    link: "https://www.coursera.org",
+  },
+  {
+    title: "Content Marketing",
+    link: "https://blog.hubspot.com/marketing",
+  },
+];
 
     roadmap = [
       "Learn Marketing Basics",
@@ -183,10 +234,36 @@ export default function Results() {
           </p>
         </div>
 
-        <p className="mt-8 text-gray-400 max-w-2xl mx-auto">
-          Based on your responses, this career path best matches your
-          interests, strengths, and preferred working style.
-        </p>
+        <div className="max-w-xl mx-auto mt-10">
+
+  <div className="bg-slate-900 rounded-3xl p-6 border border-slate-800">
+
+    <h3 className="text-2xl font-bold mb-4">
+      Job Readiness Score
+    </h3>
+
+    <div className="bg-slate-800 rounded-full h-4 overflow-hidden">
+
+      <motion.div
+        initial={{ width: 0 }}
+        animate={{ width: readiness }}
+        transition={{ duration: 1.5 }}
+        className="bg-gradient-to-r from-green-400 to-emerald-500 h-4 rounded-full"
+      />
+
+    </div>
+
+    <p className="mt-4 text-xl text-green-400 font-semibold">
+      {readiness} Ready
+    </p>
+
+    <p className="text-gray-400 mt-2">
+      Based on your current skills and assessment performance.
+    </p>
+
+  </div>
+
+</div>
 
       </div>
 
@@ -253,14 +330,23 @@ export default function Results() {
 
         <div className="grid md:grid-cols-2 gap-6">
 
-          {courses.map((course) => (
-            <div
-              key={course}
-              className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 hover:border-cyan-400 transition"
-            >
-              🎓 {course}
-            </div>
-          ))}
+{courses.map((course) => (
+  <a
+    key={course.title}
+    href={course.link}
+    target="_blank"
+    rel="noreferrer"
+    className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 hover:border-cyan-400 transition block"
+  >
+    <h3 className="font-semibold text-lg">
+      🎓 {course.title}
+    </h3>
+
+    <p className="text-cyan-400 mt-2 text-sm">
+      Open Course →
+    </p>
+  </a>
+))}
 
         </div>
 
