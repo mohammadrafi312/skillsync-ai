@@ -3,6 +3,7 @@ import { jsPDF } from "jspdf";
 import { Link } from "react-router-dom";
 import CareerChart from "../components/CareerChart";
 
+
 export default function Results() {
   const scores =
     JSON.parse(localStorage.getItem("careerResult")) || {
@@ -352,12 +353,14 @@ if (maxCareer === "marketing") {
 
       </div>
 
-      {/* Radar Chart */}
-      <div className="max-w-5xl mx-auto mt-20">
-        <CareerChart />
-      </div>
+     {/* Radar Chart */}
+<div className="max-w-5xl mx-auto mt-20">
+  <CareerChart />
+</div>
 
-      {/* Buttons */}
+
+
+{/* Buttons */}
       <div className="text-center mt-16 flex justify-center gap-4">
 
         <Link to="/">
