@@ -1,16 +1,102 @@
-# React + Vite
+# SkillSync AI 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## AI-Powered Career Guidance & Learning Roadmap Platform
 
-Currently, two official plugins are available:
+SkillSync AI is a modern career guidance platform designed to help students and aspiring professionals discover suitable career paths through personalized assessments, skill recommendations, and structured learning roadmaps.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌟 Problem Statement
 
-## React Compiler
+Many students struggle to identify the right career path due to limited guidance, unclear skill requirements, and a lack of personalized recommendations. This often leads to confusion, inefficient learning, and reduced job readiness.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 💡 Solution
 
-## Expanding the ESLint configuration
+SkillSync AI provides an interactive assessment that analyzes user interests and preferences to recommend suitable career paths along with the skills, learning roadmap, and resources required to achieve career goals.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Features
+
+* Career Assessment Quiz
+* Career Match Score
+* Job Readiness Score
+* Personalized Learning Roadmap
+* Recommended Skills
+* Recommended Courses
+* Interactive Career Radar Chart
+* Downloadable PDF Career Roadmap
+* Responsive UI Design
+* Live Deployment on Vercel
+
+## 🛠 Tech Stack
+
+### Frontend
+
+* React.js
+* React Router DOM
+* Tailwind CSS
+* Framer Motion
+
+### Visualization
+
+* Recharts
+
+### PDF Generation
+
+* jsPDF
+
+### Deployment & Version Control
+
+* Git
+* GitHub
+* Vercel
+
+## 🔄 User Flow
+
+Home Page
+→ Career Assessment
+→ Career Analysis
+→ Results Dashboard
+→ Learning Roadmap
+→ PDF Download
+
+## 🎯 Target Audience
+
+* Students
+* Fresh Graduates
+* Career Explorers
+* Skill Development Enthusiasts
+
+## 📈 Expected Impact
+
+* Helps students make informed career decisions
+* Identifies suitable career paths
+* Encourages structured learning
+* Improves job readiness awareness
+* Supports skill development planning
+
+## 🚀 Future Scope
+
+* AI Career Advisor
+* Resume Analyzer
+* Interview Question Generator
+* Skill Gap Analysis
+* Job Recommendation Engine
+* Personalized Career Tracking
+
+## 🌐 Live Demo
+
+https://skillsync-ai-rho.vercel.app
+
+## 💻 GitHub Repository
+
+https://github.com/mohammadrafi312/skillsync-ai
+
+## 👨‍💻 Developer
+
+Mohammad Rafi Shaik
+
+B.Tech – Computer Science Engineering
+
+Passionate about Web Development, Data Analytics, and AI-powered solutions.
+
+---
+
+Built for **Build The Next Big UI Hackathon 2026**
