@@ -1,13 +1,36 @@
 @import "tailwindcss";
 
+/* Light and Dark Mode Support */
+:root {
+  --bg-primary: #020617;
+  --bg-secondary: #1f2937;
+  --bg-tertiary: #111827;
+  --text-primary: #ffffff;
+  --text-secondary: #d1d5db;
+  --text-tertiary: #9ca3af;
+  --border-color: #374151;
+}
+
+html.light {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f3f4f6;
+  --bg-tertiary: #e5e7eb;
+  --text-primary: #1f2937;
+  --text-secondary: #374151;
+  --text-tertiary: #6b7280;
+  --border-color: #d1d5db;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  background: #020617;
+  background: var(--bg-primary);
+  color: var(--text-primary);
   font-family: Inter, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 * {

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTheme } from "../context/ThemeContext";
 
 // Optimized data structure: mapping each option directly to its category
 const questions = [
@@ -97,6 +98,7 @@ const questions = [
 
 export default function Assessment() {
   const navigate = useNavigate();
+  const { isDark } = useTheme();
   const [current, setCurrent] = useState(0);
   const [scores, setScores] = useState({
     software: 0,
@@ -123,25 +125,35 @@ export default function Assessment() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white flex flex-col justify-center items-center px-6 py-12">
+    <div className={`min-h-screen flex flex-col justify-center items-center px-6 py-12 ${
+      isDark 
+        ? "bg-slate-950 text-white" 
+        : "bg-gradient-to-br from-blue-50 to-indigo-50 text-slate-900"
+    }`}>
       <h1 className="text-4xl sm:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500 text-center">
         Career Assessment
       </h1>
 
-      <p className="text-gray-400 mb-10 font-medium">
+      <p className={`mb-10 font-medium ${isDark ? "text-gray-400" : "text-gray-600"}`}>
         Question {current + 1} of {questions.length}
       </p>
 
       <div className="w-full max-w-2xl">
         {/* Progress Bar */}
-        <div className="bg-slate-800/50 h-2.5 rounded-full mb-10 overflow-hidden border border-slate-700/50">
+        <div className={`h-2.5 rounded-full mb-10 overflow-hidden border ${
+          isDark 
+            ? "bg-slate-800/50 border-slate-700/50" 
+            : "bg-gray-200/50 border-gray-300/50"
+        }`}>
           <div
             className="bg-gradient-to-r from-cyan-400 to-blue-500 h-full rounded-full transition-all duration-500 ease-out"
             style={{ width: `${((current + 1) / questions.length) * 100}%` }}
           />
         </div>
 
-        <h2 className="text-2xl sm:text-3xl font-semibold mb-8 text-slate-100 leading-tight">
+        <h2 className={`text-2xl sm:text-3xl font-semibold mb-8 leading-tight ${
+          isDark ? "text-slate-100" : "text-slate-800"
+        }`}>
           {questions[current].question}
         </h2>
 

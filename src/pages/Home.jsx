@@ -20,6 +20,7 @@ import {
   Zap,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTheme } from "../context/ThemeContext";
 
 import heroStack from "../assets/hero.png";
 import Contact from "../components/Contact";

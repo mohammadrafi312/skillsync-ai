@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { jsPDF } from "jspdf";
 import { CheckCircle, BookOpen, Target, TrendingUp } from "lucide-react";
+import { useTheme } from "../context/ThemeContext";
 // Career path recommendations with comprehensive resources
 const careerInsights = {
   software: {
@@ -84,6 +85,7 @@ const careerInsights = {
 
 export default function Results() {
   const navigate = useNavigate();
+  const { isDark } = useTheme();
   const [topCategory, setTopCategory] = useState(null);
   const [scores, setScores] = useState(null);
 
@@ -141,34 +143,34 @@ export default function Results() {
     doc.save(`Career-Report-${topCategory}.pdf`);
   };
 
-  if (!topCategory) return <div className="min-h-screen bg-slate-950 flex items-center justify-center text-white">Loading insights...</div>;
+  if (!topCategory) return <div className={`min-h-screen flex items-center justify-center ${isDark ? "bg-slate-950 text-white" : "bg-gradient-to-br from-blue-50 to-indigo-50 text-slate-900"}`}>Loading insights...</div>;
 
   const insight = careerInsights[topCategory];
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white py-20 px-6">
+    <div className={`min-h-screen py-20 px-6 ${isDark ? "bg-slate-950 text-white" : "bg-gradient-to-br from-blue-50 to-indigo-50 text-slate-900"}`}>
       <div className="max-w-5xl mx-auto">
         
         <div className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">Your Career Profile</h1>
-          <p className="text-gray-400 text-lg">Based on your assessment, here is your personalized career trajectory.</p>
+          <p className={`text-lg ${isDark ? "text-gray-400" : "text-gray-600"}`}>Based on your assessment, here is your personalized career trajectory.</p>
         </div>
 
         {/* Highlight Card */}
         <div className={`rounded-3xl p-1 bg-gradient-to-r ${insight.color} mb-12 shadow-2xl`}>
-          <div className="bg-slate-900 rounded-[23px] p-8 sm:p-12 h-full flex flex-col items-center text-center">
+          <div className={`rounded-[23px] p-8 sm:p-12 h-full flex flex-col items-center text-center ${isDark ? "bg-slate-900" : "bg-white"}`}>
             <h2 className={`text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r ${insight.color} mb-4`}>
               {insight.title}
             </h2>
-            <p className="text-slate-300 text-lg mb-8 max-w-2xl">
+            <p className={`text-lg mb-8 max-w-2xl ${isDark ? "text-slate-300" : "text-slate-600"}`}>
               {insight.description}
             </p>
             
             <div className="w-full text-left">
-              <h3 className="text-xl font-semibold mb-4 text-white border-b border-slate-700 pb-2">Recommended Roles</h3>
+              <h3 className={`text-xl font-semibold mb-4 pb-2 border-b ${isDark ? "text-white border-slate-700" : "text-slate-900 border-slate-300"}`}>Recommended Roles</h3>
               <div className="flex flex-wrap gap-3 justify-center mt-4">
                 {insight.roles.map((role) => (
-                  <span key={role} className="px-4 py-2 rounded-full bg-slate-800 border border-slate-700 text-sm font-medium hover:bg-slate-700 transition-colors">
+                  <span key={role} className={`px-4 py-2 rounded-full text-sm font-medium transition-colors border ${isDark ? "bg-slate-800 border-slate-700 hover:bg-slate-700" : "bg-slate-100 border-slate-300 hover:bg-slate-200"}`}>
                     {role}
                   </span>
                 ))}
