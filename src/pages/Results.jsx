@@ -86,8 +86,8 @@ export default function Results() {
 
   if (maxCareer === "design") {
     career = "UI/UX Designer";
-match = "92%";
-readiness = "80%";
+    match = "92%";
+    readiness = "80%";
 
     skills = [
       "Figma",
@@ -96,7 +96,7 @@ readiness = "80%";
       "Prototyping",
     ];
 
-   courses = [
+    courses = [
   {
     title: "Figma Masterclass",
     link: "https://help.figma.com",
@@ -124,10 +124,10 @@ readiness = "80%";
     ];
   }
 
-if (maxCareer === "marketing") {
-  career = "Digital Marketer";
-  match = "91%";
-  readiness = "76%";
+  if (maxCareer === "marketing") {
+    career = "Digital Marketer";
+    match = "91%";
+    readiness = "76%";
 
     skills = [
       "SEO",
@@ -224,7 +224,7 @@ if (maxCareer === "marketing") {
           <div className="bg-slate-800 rounded-full h-4 overflow-hidden">
             <motion.div
               initial={{ width: 0 }}
-              animate={{ width: match }}
+              animate={{ width: `${parseInt(match)}%` }}
               transition={{ duration: 1.5 }}
               className="bg-gradient-to-r from-cyan-400 to-blue-500 h-4 rounded-full"
             />
@@ -247,7 +247,7 @@ if (maxCareer === "marketing") {
 
       <motion.div
         initial={{ width: 0 }}
-        animate={{ width: readiness }}
+        animate={{ width: `${parseInt(readiness)}%` }}
         transition={{ duration: 1.5 }}
         className="bg-gradient-to-r from-green-400 to-emerald-500 h-4 rounded-full"
       />

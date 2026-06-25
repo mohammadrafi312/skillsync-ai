@@ -23,8 +23,14 @@ export default function Contact() {
         <div className="bg-slate-900 border border-slate-800 rounded-3xl p-10">
 
           <p className="text-xl mb-4">
-  📧 Email: shaik.mohammadrafi2712@gmail.com
-</p>
+            📧 Email:{" "}
+            <a
+              href="mailto:shaik.mohammadrafi2712@gmail.com"
+              className="break-all font-semibold text-cyan-300 underline-offset-4 hover:text-cyan-200 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300"
+            >
+              shaik.mohammadrafi2712@gmail.com
+            </a>
+          </p>
 
 <p className="text-xl mb-4">
   📱 Contact: +91 9381939958
