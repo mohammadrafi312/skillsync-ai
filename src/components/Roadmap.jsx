@@ -12,11 +12,11 @@ export default function Roadmap() {
   return (
     <section
       id="roadmap"
-      className="bg-slate-950 text-white py-32 px-6"
+      className="bg-[#020611] text-white py-28 px-6"
     >
       <div className="max-w-5xl mx-auto">
 
-        <h2 className="text-6xl font-bold text-center mb-6">
+        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-6">
           Career Roadmap
         </h2>
 
@@ -32,9 +32,9 @@ export default function Roadmap() {
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.15 }}
-              className="flex items-center gap-6 bg-slate-900 border border-slate-800 rounded-2xl p-6"
+              className="flex items-center gap-6 rounded-lg border border-cyan-500/10 bg-[#071226]/70 p-6 backdrop-blur-xl"
             >
-              <div className="w-12 h-12 rounded-full bg-cyan-500 flex items-center justify-center font-bold">
+              <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 flex items-center justify-center font-bold text-slate-950">
                 {index + 1}
               </div>
 

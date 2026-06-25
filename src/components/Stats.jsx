@@ -26,12 +26,12 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section className="bg-slate-950 px-6 py-24">
+    <section className="bg-[#020611] px-6 py-24">
 
       <motion.h2
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        className="text-center text-5xl font-bold text-white mb-16"
+        className="text-center text-4xl sm:text-5xl font-bold text-white mb-16"
       >
         Trusted by Future Professionals
       </motion.h2>
@@ -48,9 +48,9 @@ export default function Stats() {
               scale: 1.05,
               y: -10,
             }}
-            className="bg-slate-900/60 backdrop-blur-xl border border-cyan-500/10 rounded-3xl p-8 text-center hover:border-cyan-400/40 hover:shadow-[0_0_30px_rgba(34,211,238,0.15)] transition-all duration-300"
+            className="bg-[#071226]/70 backdrop-blur-xl border border-cyan-500/10 rounded-lg p-8 text-center hover:border-cyan-400/40 hover:shadow-[0_0_30px_rgba(34,211,238,0.15)] transition-all duration-300"
           >
-            <div className="w-16 h-16 rounded-full bg-cyan-500/10 flex items-center justify-center text-cyan-400 mx-auto mb-6">
+            <div className="w-16 h-16 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 mx-auto mb-6">
               {stat.icon}
             </div>
 

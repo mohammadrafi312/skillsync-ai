@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   background: #020617;
@@ -9,6 +13,108 @@ body {
 * {
   box-sizing: border-box;
 }
-html {
-  scroll-behavior: smooth;
+
+.hero-stage {
+  background:
+    linear-gradient(180deg, rgba(3, 7, 18, 0.75) 0%, #020611 72%),
+    radial-gradient(ellipse at 58% 10%, rgba(37, 99, 235, 0.2), transparent 42%),
+    radial-gradient(ellipse at 92% 62%, rgba(124, 58, 237, 0.16), transparent 36%),
+    #020611;
+}
+
+.hero-stage::before {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  content: "";
+  background-image:
+    linear-gradient(115deg, transparent 0 18%, rgba(14, 165, 233, 0.22) 18.2%, transparent 18.7% 100%),
+    linear-gradient(145deg, transparent 0 72%, rgba(59, 130, 246, 0.18) 72.2%, transparent 72.7% 100%),
+    radial-gradient(circle, rgba(56, 189, 248, 0.78) 1px, transparent 1.5px);
+  background-position:
+    0 0,
+    0 0,
+    0 0;
+  background-size:
+    480px 260px,
+    560px 320px,
+    112px 112px;
+  opacity: 0.45;
+  mask-image: linear-gradient(to bottom, black 0%, black 76%, transparent 100%);
+}
+
+.hero-stage::after {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(2, 6, 17, 0.4), transparent 45%, rgba(2, 6, 17, 0.55)),
+    repeating-linear-gradient(90deg, rgba(30, 64, 175, 0.1) 0 1px, transparent 1px 120px);
+}
+
+.hero-gradient-text {
+  color: transparent;
+  background: linear-gradient(90deg, #22d3ee 0%, #2563eb 44%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.hero-wave {
+  position: absolute;
+  right: -12%;
+  bottom: -3%;
+  left: -12%;
+  z-index: -1;
+  height: 42%;
+  pointer-events: none;
+  background:
+    linear-gradient(175deg, transparent 0 32%, rgba(56, 189, 248, 0.78) 35%, transparent 38% 100%),
+    repeating-radial-gradient(ellipse at 50% 112%, rgba(56, 189, 248, 0.7) 0 1px, transparent 2px 12px),
+    repeating-radial-gradient(ellipse at 38% 120%, rgba(124, 58, 237, 0.52) 0 1px, transparent 2px 17px);
+  filter: drop-shadow(0 -18px 32px rgba(14, 165, 233, 0.42));
+  mask-image: linear-gradient(to top, black 34%, transparent 100%);
+  transform: rotate(-1.5deg);
+}
+
+.hero-wave::before {
+  position: absolute;
+  inset: 24% 0 auto;
+  height: 2px;
+  content: "";
+  background: linear-gradient(90deg, transparent, #22d3ee, #8b5cf6, transparent);
+  box-shadow: 0 0 24px rgba(34, 211, 238, 0.9);
+}
+
+.dashboard-shell {
+  transform-style: preserve-3d;
+}
+
+.radar-chart {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(90deg, transparent 49%, rgba(59, 130, 246, 0.26) 49% 51%, transparent 51%),
+    linear-gradient(0deg, transparent 49%, rgba(59, 130, 246, 0.26) 49% 51%, transparent 51%),
+    radial-gradient(circle, transparent 0 25%, rgba(59, 130, 246, 0.18) 25.5% 26%, transparent 26.5% 50%, rgba(59, 130, 246, 0.18) 50.5% 51%, transparent 51.5%);
+  clip-path: polygon(50% 2%, 95% 35%, 78% 92%, 22% 92%, 5% 35%);
+}
+
+.radar-chart::before,
+.radar-chart::after {
+  position: absolute;
+  inset: 14%;
+  content: "";
+  clip-path: polygon(50% 0, 91% 38%, 72% 100%, 27% 95%, 11% 35%);
+}
+
+.radar-chart::before {
+  border: 1px solid rgba(34, 211, 238, 0.48);
+}
+
+.radar-chart::after {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.72), rgba(124, 58, 237, 0.48));
+  box-shadow: 0 0 26px rgba(37, 99, 235, 0.45);
+  opacity: 0.9;
 }

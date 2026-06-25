@@ -28,14 +28,14 @@ export default function Features() {
   return (
     <section
   id="features"
-  className="bg-slate-950 text-white py-32 px-6"
+  className="bg-[#020611] text-white py-28 px-6"
 >
 
       <motion.h2
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-center text-6xl font-bold mb-6"
+        className="text-center text-4xl sm:text-5xl font-bold mb-6"
       >
         Why SkillSync?
       </motion.h2>
@@ -58,9 +58,9 @@ export default function Features() {
               scale: 1.05,
               y: -10,
             }}
-            className="bg-slate-900/60 backdrop-blur-xl border border-cyan-500/10 rounded-3xl p-8 hover:border-cyan-400/40 hover:shadow-[0_0_30px_rgba(34,211,238,0.15)] transition-all duration-300"
+            className="bg-[#071226]/70 backdrop-blur-xl border border-cyan-500/10 rounded-lg p-8 hover:border-cyan-400/40 hover:shadow-[0_0_30px_rgba(34,211,238,0.15)] transition-all duration-300"
           >
-            <div className="w-20 h-20 rounded-full bg-cyan-500/10 flex items-center justify-center text-cyan-400 mb-6 shadow-[0_0_25px_rgba(34,211,238,0.25)]">
+            <div className="w-16 h-16 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 mb-6 shadow-[0_0_25px_rgba(34,211,238,0.25)]">
               {feature.icon}
             </div>
 
