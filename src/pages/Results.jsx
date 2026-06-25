@@ -12,9 +12,9 @@ export default function Results() {
       design: 0,
       marketing: 0,
     };
-let career = "Data Analyst";
-let match = "94%";
-let readiness = "78%";
+  let career = "Data Analyst";
+  let match = "94%";
+  let readiness = "78%";
 
   let skills = ["SQL", "Power BI", "Python", "Excel"];
 
@@ -51,12 +51,12 @@ let readiness = "78%";
 
   if (maxCareer === "software") {
     career = "Software Engineer";
-match = "96%";
-readiness = "85%";
+    match = "96%";
+    readiness = "85%";
 
     skills = ["HTML & CSS", "JavaScript", "React", "Node.js"];
 
-   courses = [
+    courses = [
   {
     title: "HTML & CSS Bootcamp",
     link: "https://www.freecodecamp.org/learn",
